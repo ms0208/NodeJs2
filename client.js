@@ -13,3 +13,9 @@ client.on('data', data => {
 client.on('end', () => {
     console.log('Disconnected from server');
 });
+
+client.on('error', err => {
+    console.error('Error:', err);
+    client.end();
+});
+
